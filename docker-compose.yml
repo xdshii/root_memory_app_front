@@ -1,0 +1,27 @@
+version: '3'
+services:
+  flutter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - ~/.gitconfig:/root/.gitconfig
+      - ~/.ssh:/root/.ssh
+    environment:
+      - DISPLAY=${DISPLAY}
+      - HTTP_PROXY=http://host.docker.internal:7891
+      - HTTPS_PROXY=http://host.docker.internal:7891
+      - NO_PROXY=localhost,127.0.0.1,::1
+      - FLUTTER_NO_ROOT_WARNING=true
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
+    network_mode: host
+    tty: true
+    stdin_open: true
+    command: bash -c "cd /app && flutter doctor && /bin/bash"

@@ -1,0 +1,76 @@
+name: root_memory_app
+description: A Flutter application for learning English vocabulary through root-based memorization.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  
+  # UI相关
+  cupertino_icons: ^1.0.2
+  google_fonts: ^4.0.3
+  flutter_svg: ^2.0.5
+  cached_network_image: ^3.2.3
+  lottie: ^2.3.2
+  
+  # 状态管理
+  flutter_bloc: ^8.1.2
+  equatable: ^2.0.5
+  provider: ^6.0.5
+  
+  # 路由
+  go_router: ^7.0.0
+  
+  # 存储
+  shared_preferences: ^2.1.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path_provider: ^2.0.14
+  
+  # 网络
+  dio: ^5.1.1
+  connectivity_plus: ^3.0.3
+  
+  # 音频
+  just_audio: ^0.9.32
+  
+  # 工具
+  intl: ^0.19.0
+  logger: ^1.3.0
+  uuid: ^3.0.7
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.1
+  build_runner: ^2.3.3
+  hive_generator: ^2.0.0
+  bloc_test: ^9.1.1
+  mockito: ^5.4.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/images/
+    - assets/images/roots/
+    - assets/images/words/
+    - assets/audio/
+    - assets/animations/
+  
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
